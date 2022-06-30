@@ -51,7 +51,7 @@ In this case the following steps are recommended:
 **Step by Step:** Mod Creation
 <details>
 <summary>Click to expand</summary>
-z
+
 Another scenario is that you want to develop a new mod with Render Player API.
 
 **In this case the following steps are recommended:**
@@ -161,7 +161,4 @@ public class MyModModelPlayerBase extends ModelPlayerBase {
 
 </details>
 
-## 1.7.10 versions:
-[Core 1.4](files/rpapi/MC%201.7.10%20-%20Render%20Player%20API%20core%201.4.zip)
-
-[Enhancer 1.4](files/rpapi/MC%201.7.10%20-%20Render%20Player%20API%20enhancer%201.4.zip)
+# For the files, see `files/rpapi`
