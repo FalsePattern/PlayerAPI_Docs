@@ -1,0 +1,435 @@
+package api.player.model;
+
+import java.util.Set;
+
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
+
+public class ModelPlayerAPIEnhancerMethodVisitor extends MethodVisitor
+{
+	private final boolean isObfuscated;
+	private final String enhancableClassName;
+	private final String originalSuperClassName;
+	private final String enhancerSuperClassName;
+	private final String enhancedName;
+	private final String enhancedDesc;
+	private final Set<String> superCallingMethods;
+
+	public ModelPlayerAPIEnhancerMethodVisitor(MethodVisitor paramMethodVisitor, boolean isObfuscated, String enhancableClassName, String originalSuperClassName, String enhancerSuperClassName, Set<String> superCallingMethods, String enhancedName, String enhancedDesc)
+	{
+		super(262144, paramMethodVisitor);
+		this.isObfuscated = isObfuscated;
+		this.enhancableClassName = enhancableClassName;
+		this.originalSuperClassName = originalSuperClassName;
+		this.enhancerSuperClassName = enhancerSuperClassName;
+		this.enhancedName = enhancedName;
+		this.enhancedDesc = enhancedDesc;
+		this.superCallingMethods = superCallingMethods;
+	}
+
+	public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean itf)
+	{
+		if(opcode == Opcodes.INVOKESPECIAL && owner.equals(originalSuperClassName))
+		{
+			String newName = getSuperMethodName(name, desc);
+			if(!newName.equals(name))
+			{
+				name = newName;
+				owner = enhancerSuperClassName;
+			}
+		}
+		super.visitMethodInsn(opcode, owner, name, desc, itf);
+	}
+
+	private String getSuperMethodName(String name, String desc)
+	{
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(Ljava/util/Random;)Lcdy;"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'getRandomModelBox' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localGetRandomModelBox";
+				}
+			}
+			else if(name.equals("func_85181_a") && desc.equals("(Ljava/util/Random;)Lnet/minecraft/client/model/ModelRenderer;"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'getRandomModelBox' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localGetRandomModelBox";
+				}
+			}
+		}
+		else if(name.equals("getRandomModelBox") && desc.equals("(Ljava/util/Random;)Lnet/minecraft/client/model/ModelRenderer;"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localGetRandomModelBox";
+			}
+		}
+
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(Ljava/lang/String;)Lcdz;"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'getTextureOffset' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localGetTextureOffset";
+				}
+			}
+			else if(name.equals("func_78084_a") && desc.equals("(Ljava/lang/String;)Lnet/minecraft/client/model/TextureOffset;"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'getTextureOffset' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localGetTextureOffset";
+				}
+			}
+		}
+		else if(name.equals("getTextureOffset") && desc.equals("(Ljava/lang/String;)Lnet/minecraft/client/model/TextureOffset;"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localGetTextureOffset";
+			}
+		}
+
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(F)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'postRenderArm' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localPostRenderArm";
+				}
+			}
+			else if(name.equals("func_178718_a") && desc.equals("(F)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'postRenderArm' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localPostRenderArm";
+				}
+			}
+		}
+		else if(name.equals("postRenderArm") && desc.equals("(F)V"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localPostRenderArm";
+			}
+		}
+
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(Lwv;FFFFFF)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'render' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localRender";
+				}
+			}
+			else if(name.equals("func_78088_a") && desc.equals("(Lnet/minecraft/entity/Entity;FFFFFF)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'render' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localRender";
+				}
+			}
+		}
+		else if(name.equals("render") && desc.equals("(Lnet/minecraft/entity/Entity;FFFFFF)V"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localRender";
+			}
+		}
+
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(Z)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setInvisible' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetInvisible";
+				}
+			}
+			else if(name.equals("func_178719_a") && desc.equals("(Z)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setInvisible' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetInvisible";
+				}
+			}
+		}
+		else if(name.equals("setInvisible") && desc.equals("(Z)V"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localSetInvisible";
+			}
+		}
+
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(Lxm;FFF)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setLivingAnimations' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetLivingAnimations";
+				}
+			}
+			else if(name.equals("func_78086_a") && desc.equals("(Lnet/minecraft/entity/EntityLivingBase;FFF)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setLivingAnimations' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetLivingAnimations";
+				}
+			}
+		}
+		else if(name.equals("setLivingAnimations") && desc.equals("(Lnet/minecraft/entity/EntityLivingBase;FFF)V"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localSetLivingAnimations";
+			}
+		}
+
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(Lccq;)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setModelAttributes' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetModelAttributes";
+				}
+			}
+			else if(name.equals("func_178686_a") && desc.equals("(Lnet/minecraft/client/model/ModelBase;)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setModelAttributes' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetModelAttributes";
+				}
+			}
+		}
+		else if(name.equals("setModelAttributes") && desc.equals("(Lnet/minecraft/client/model/ModelBase;)V"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localSetModelAttributes";
+			}
+		}
+
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(FFFFFFLwv;)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setRotationAngles' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetRotationAngles";
+				}
+			}
+			else if(name.equals("func_78087_a") && desc.equals("(FFFFFFLnet/minecraft/entity/Entity;)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setRotationAngles' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetRotationAngles";
+				}
+			}
+		}
+		else if(name.equals("setRotationAngles") && desc.equals("(FFFFFFLnet/minecraft/entity/Entity;)V"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localSetRotationAngles";
+			}
+		}
+
+		if(isObfuscated)
+		{
+			if(name.equals("a") && desc.equals("(Ljava/lang/String;II)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setTextureOffset' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetTextureOffset";
+				}
+			}
+			else if(name.equals("func_78085_a") && desc.equals("(Ljava/lang/String;II)V"))
+			{
+				if(superCallingMethods.contains(name + "___" + desc))
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return name;
+				}
+				else
+				{
+					ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because it actually is 'setTextureOffset' and its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+					return "localSetTextureOffset";
+				}
+			}
+		}
+		else if(name.equals("setTextureOffset") && desc.equals("(Ljava/lang/String;II)V"))
+		{
+			if(superCallingMethods.contains(name + "___" + desc))
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("leaves super method reference '%s%s' in '%s.%s%s' untouched because its local implementation does call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return name;
+			}
+			else
+			{
+				ModelPlayerAPIEnhancerClassVisitor.info("renames super method reference '%s%s' in '%s.%s%s' because its local implementation doesn't call its super method", name, desc, enhancableClassName, enhancedName, enhancedDesc);
+				return "localSetTextureOffset";
+			}
+		}
+
+		return name;
+	}
+}
