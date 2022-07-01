@@ -1,0 +1,5 @@
+== Render Player API 1.1 ==
++ fixed exception when calling "ModLoader.addArmor" during ModLoader startup
+
+== Render Player API 1.0 ==
++ created the Render Player API

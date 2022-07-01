@@ -1,0 +1,6 @@
+== Render Player API vanilla 1.1 ==
++ removed forge specific code
+
+== Render Player API vanilla 1.0 ==
++ moved API classes to separate packages
++ upgraded to Minecraft 1.6.1

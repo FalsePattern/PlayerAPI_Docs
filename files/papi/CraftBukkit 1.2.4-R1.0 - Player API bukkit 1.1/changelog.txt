@@ -1,0 +1,13 @@
+== Player API bukkit 1.1 ==
++ added MC Port Central CraftBukkit compatibility
++ applied bugfix from MC Port Central CraftBukkit to ensure overwrite compatibility
+
+== Player API bukkit 1.0 ==
++ created Player API for CraftBukkit 1.2.4-R1.0
++ added hook "interact"
++ added method accessors for not public methods
++ added super method accessors for not hooked methods
++ renamed hooks according to MCP 6.1
+ * "dropCurrentItem" => "dropOneItem"
+ * "getEntityBrightness" => "getBrightness"
+ * "setEntityDead" => "setDead"

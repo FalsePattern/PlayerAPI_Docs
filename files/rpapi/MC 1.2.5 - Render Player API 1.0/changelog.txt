@@ -1,0 +1,2 @@
+== Render Player API client 1.0 ==
++ created the Render Player API

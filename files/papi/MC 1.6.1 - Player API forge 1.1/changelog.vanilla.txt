@@ -1,0 +1,7 @@
+== Player API vanilla 1.1 ==
++ removed forge specific code
+
+== Player API vanilla 1.0 ==
++ moved API classes to separate packages
++ renamed client API classes
++ upgraded to Minecraft 1.6.1

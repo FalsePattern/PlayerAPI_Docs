@@ -1,0 +1,5 @@
+== Render Player API core 1.1 ==
++ broke downward compatibility for constructor hooks to enable on the fly third-party armor model enhancing
+
+== Render Player API core 1.0 ==
++ created Render Player API core for Minecraft 1.7.10

@@ -1,0 +1,12 @@
+== Player API server 1.3 ==
++ fixed version logging
+
+== Player API server 1.2 ==
++ applied bugfix from Minecraft Forge server to ensure overwrite compatibility
+
+== Player API server 1.1 ==
++ fixed error handling
+
+== Player API server 1.0 ==
++ upgraded to Minecraft 1.1
++ improved decompile ability

@@ -1,0 +1,7 @@
+== Player API client 1.0 ==
++ upgraded to Minecraft 1.2.4
++ renamed hooks according to MCP 6.1
+ * "dropCurrentItem" => "dropOneItem"
+ * "getEntityBrightness" => "getBrightness"
+ * "getEntityBrightnessForRender" => "getBrightnessForRender"
+ * "setEntityDead" => "setDead"

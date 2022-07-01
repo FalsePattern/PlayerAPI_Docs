@@ -1,0 +1,8 @@
+== Render Player API enhancer 1.2 ==
++ added license information
+
+== Render Player API enhancer 1.1 ==
++ switched back to compiling for Java 1.6
+
+== Render Player API enhancer 1.0 ==
++ created Render Player API enhancer for Minecraft 1.8

@@ -1,0 +1,8 @@
+== Player API universal 1.2 ==
++ improved Minecraft Forge player spawning compatibility
+
+== Player API universal 1.1 ==
++ added server hook "getMaxHealth"
+
+== Player API universal 1.0 ==
++ upgraded to Minecraft 1.4.5

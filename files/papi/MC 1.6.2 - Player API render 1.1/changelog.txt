@@ -1,0 +1,6 @@
+== Player API render 1.1 ==
++ updated to Player API vanilla 1.1
++ updated to Render Player API vanilla 1.1
+
+== Player API render 1.0 ==
++ upgraded to Minecraft 1.6.2

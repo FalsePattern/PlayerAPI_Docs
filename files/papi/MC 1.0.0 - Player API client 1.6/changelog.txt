@@ -1,0 +1,24 @@
+== Player API client 1.6 ==
++ added hook "canBreatheUnderwater"
+
+== Player API client 1.5 ==
++ added hook "getSleepTimer"
+
+== Player API client 1.4 ==
++ added hook "getItemIcon"
+
+== Player API client 1.3 ==
++ added hook "setPositionAndRotation"
+
+== Player API client 1.2 ==
++ added hook "isSprinting"
++ added standard output and java logging
+
+== Player API client 1.1 ==
++ added hooks "addExhaustion" and "isEntityInsideOpaqueBlock"
++ added local constructor hooks
++ corrected field accessor methods
+
+== Player API client 1.0 ==
++ upgraded to Minecraft 1.0.0
++ improved and standardized hook pattern

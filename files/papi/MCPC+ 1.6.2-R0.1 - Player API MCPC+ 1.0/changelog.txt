@@ -1,0 +1,2 @@
+== Player API MCPC+ 1.0 ==
++ created Player API for MCPC+ 1.6.2-R0.1

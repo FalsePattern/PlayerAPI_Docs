@@ -1,0 +1,5 @@
+== Player API universal 1.1 ==
++ added support for Minecraft Forge client player sound events
+
+== Player API universal 1.0 ==
++ upgraded to Minecraft 1.5.2

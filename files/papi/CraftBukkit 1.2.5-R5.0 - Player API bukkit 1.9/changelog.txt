@@ -1,0 +1,29 @@
+== Player API bukkit 1.9 ==
++ updated Player API for CraftBukkit 1.2.5-R5.0
+
+== Player API bukkit 1.8 ==
++ added hook "getSpeedModifier"
+
+== Player API bukkit 1.7 ==
++ fixed player base sorting by inferior relationship
+
+== Player API bukkit 1.6 ==
++ updated Player API for CraftBukkit 1.2.5-R4.0
+
+== Player API bukkit 1.5 ==
++ updated Player API for CraftBukkit 1.2.5-R3.0
+
+== Player API bukkit 1.4 ==
++ updated Player API for CraftBukkit 1.2.5-R2.0
+
+== Player API bukkit 1.3 ==
++ added support for attaching and detaching Player Bases on the fly
+
+== Player API bukkit 1.2 ==
++ added hook "canHarvestBlock"
+
+== Player API bukkit 1.1 ==
++ added hooks "attackTargetEntityWithCurrentItem", "canPlayerEdit" and "damageEntity"
+
+== Player API bukkit 1.0 ==
++ created Player API for CraftBukkit 1.2.5-R1.0

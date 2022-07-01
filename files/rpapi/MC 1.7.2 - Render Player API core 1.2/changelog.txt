@@ -1,0 +1,8 @@
+== Render Player API core 1.2 ==
++ improved JAR file name
+
+== Render Player API core 1.1 ==
++ added source package
+
+== Render Player API core 1.0 ==
++ created Render Player API core for Minecraft 1.7.2

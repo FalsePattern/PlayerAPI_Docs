@@ -1,0 +1,13 @@
+== Player API server 1.3 ==
++ added method accessors for not public methods
++ added super method accessors for not hooked methods
++ applied bugfix from MinecraftForge server 1.4.1
+
+== Player API server 1.2 ==
++ added hook "interact"
+
+== Player API server 1.1 ==
++ fixed closing inventory error
+
+== Player API server 1.0 ==
++ upgraded to Minecraft 1.2.3

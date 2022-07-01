@@ -1,0 +1,5 @@
+== Player API forge 1.1 ==
++ improved code for Minecraft Forge only usage
+
+== Player API forge 1.0 ==
++ created Player API forge for Minecraft 1.6.1 based on Player API vanilla 1.0

@@ -1,0 +1,10 @@
+== Render Player API core 1.2 ==
++ broke downward compatibility for constructor hooks to enable on the fly third-party armor model enhancing
++ fixed render hook "canRenderName"
++ improved instance management
+
+== Render Player API core 1.1 ==
++ readded support for player armor models
+
+== Render Player API core 1.0 ==
++ created Render Player API core for Minecraft 1.8

@@ -1,0 +1,8 @@
+== Render Player API 1.1 ==
++ added player model instance management
+
+== Render Player API 1.1 ==
++ fixed Minecraft Forge pass rendering compatibility
+
+== Render Player API 1.0 ==
++ upgraded to Minecraft 1.5.2

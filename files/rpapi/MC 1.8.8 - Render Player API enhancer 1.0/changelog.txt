@@ -1,0 +1,2 @@
+== Render Player API enhancer 1.0 ==
++ created Render Player API enhancer for Minecraft 1.8.8

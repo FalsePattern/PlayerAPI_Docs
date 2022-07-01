@@ -1,0 +1,17 @@
+== Player API client 1.5 ==
++ added hooks "addStat" and "addMovementStat"
+
+== Player API client 1.4 ==
++ fixed player base sorting by inferior relationship
+
+== Player API client 1.3 ==
++ added hook "alertWolves"
+
+== Player API client 1.2 ==
++ added hook "playStepSound"
+
+== Player API client 1.1 ==
++ added hooks "getSpeedModifier" and "knockBack"
+
+== Player API client 1.0 ==
++ upgraded to Minecraft 1.2.5

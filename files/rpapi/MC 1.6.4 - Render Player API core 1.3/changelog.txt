@@ -1,0 +1,12 @@
+== Render Player API core 1.3 ==
++ fixed compilation for Java 1.6
+
+== Render Player API core 1.2 ==
++ improved JAR file name
+
+== Render Player API core 1.1 ==
++ fixed obfuscated field access of Model Player API
++ improved instance management
+
+== Render Player API core 1.0 ==
++ created Render Player API core for Minecraft 1.6.4

@@ -1,0 +1,8 @@
+== Render Player API forge 1.2 ==
++ fixed player head block rendering
+
+== Render Player API forge 1.1 ==
++ fixed Minecraft Forge item armor model replacement
+
+== Render Player API forge 1.0 ==
++ created Render Player API forge for Minecraft 1.6.2 based on Render Player API vanilla 1.0

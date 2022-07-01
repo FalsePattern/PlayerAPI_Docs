@@ -1,0 +1,8 @@
+== Player API bukkit 1.2 ==
++ added hooks "knockBack" and "swingItem"
+
+== Player API bukkit 1.1 ==
++ added hooks "addExhaustion" and "addMovementStat"
+
+== Player API bukkit 1.0 ==
++ created Player API for CraftBukkit 1.3.1-R2.0

@@ -1,0 +1,8 @@
+== Player API universal 1.1 ==
++ improved Minecraft Forge compatibility
++ improved player base registration robustness
+
+== Player API universal 1.0 ==
++ combined Player API client and Player API server to Player API universal
++ upgraded to Minecraft 1.4.2
++ added client hook "interact"

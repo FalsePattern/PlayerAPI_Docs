@@ -1,0 +1,2 @@
+== Player API vanilla 1.0 ==
++ upgraded to Minecraft 1.6.2

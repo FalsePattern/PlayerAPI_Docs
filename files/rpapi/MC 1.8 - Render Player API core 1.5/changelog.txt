@@ -1,0 +1,21 @@
+== Render Player API core 1.5 ==
++ added license information
++ fixed readme file
+
+== Render Player API core 1.4 ==
++ switched back to compiling for Java 1.6
+
+== Render Player API core 1.3 ==
++ enabled local method overriding to enable on the fly third-party armor model enhancing improvement
++ fixed unregistering base classes
+
+== Render Player API core 1.2 ==
++ broke downward compatibility for constructor hooks to enable on the fly third-party armor model enhancing
++ fixed render hook "canRenderName"
++ improved instance management
+
+== Render Player API core 1.1 ==
++ readded support for player armor models
+
+== Render Player API core 1.0 ==
++ created Render Player API core for Minecraft 1.8

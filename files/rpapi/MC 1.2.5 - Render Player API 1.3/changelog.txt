@@ -1,0 +1,11 @@
+== Render Player API 1.3 ==
++ fixed render player base sorting by inferior relationship
+
+== Render Player API 1.2 ==
++ added support for Minecraft Forge 3.2.5
+
+== Render Player API 1.1 ==
++ fixed exception when calling "ModLoader.addArmor" during ModLoader startup
+
+== Render Player API 1.0 ==
++ created the Render Player API

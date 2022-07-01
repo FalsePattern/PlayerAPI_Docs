@@ -1,0 +1,25 @@
+== Player API client 1.7 ==
++ added client and server hook "onStruckByLightning"
+
+== Player API client 1.6 ==
++ fixed Minecraft Forge support
+
+== Player API client 1.5 ==
++ fixed individual method sorting
++ added support for Minecraft Forge 4.1.4
+
+== Player API client 1.4 ==
++ added client hook "isPlayerSleeping"
++ added server hooks "knockBack" and "swingItem"
+
+== Player API client 1.3 ==
++ added server hooks "addExhaustion" and "addMovementStat"
+
+== Player API client 1.2 ==
++ fixed random crashes when using a portal
+
+== Player API client 1.1 ==
++ improved decompilability for Minecraft Forge 4.0.0
+
+== Player API client 1.0 ==
++ upgraded to Minecraft 1.3.2

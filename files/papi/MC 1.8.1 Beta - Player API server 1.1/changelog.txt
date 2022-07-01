@@ -1,0 +1,5 @@
+== Player API server 1.1 ==
++ added hook "onKillEntity"
+
+== Player API server 1.0 ==
++ took over mod from jamioflan

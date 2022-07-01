@@ -1,0 +1,18 @@
+== Player API universal 1.2 ==
++ added client and server hook "getCurrentPlayerStrVsBlockForge" for the "getCurrentPlayerStrVsBlock" method added by Minecraft Forge
+
+== Player API universal 1.4 ==
++ improved installation verification error message
+
+== Player API universal 1.3 ==
++ added support for attaching and detaching Player Bases on the fly
++ added dynamic methods
+
+== Player API universal 1.2 ==
++ added server hook "clonePlayer"
+
+== Player API universal 1.1 ==
++ added server hook "updatePotionEffects"
+
+== Player API universal 1.0 ==
++ upgraded to Minecraft 1.5.1

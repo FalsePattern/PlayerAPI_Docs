@@ -1,0 +1,3 @@
+== Player API core 1.0 ==
++ created Player API core for Minecraft 1.12
++ started signing Player API core jar file

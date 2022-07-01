@@ -1,0 +1,2 @@
+== Render Player API enhancer 1.0 ==
++ create Render Player API enhancer for Minecraft 1.7.10
